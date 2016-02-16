@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('angularfireSlackApp')
+  angular.module('productNotesApp')
     .controller('MessagesController', function(profile, channelName, messages){
       var vmMessages = this;
 

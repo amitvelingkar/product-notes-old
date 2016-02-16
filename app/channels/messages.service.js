@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('angularfireSlackApp')
+  angular.module('productNotesApp')
   	.factory('Messages', function($firebaseArray, FirebaseUrl){
   		var channelMessagesRef = new Firebase(FirebaseUrl + 'channelsMessages');
       var userMessagesRef = new Firebase(FirebaseUrl + 'userMessages');

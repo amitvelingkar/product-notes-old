@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('angularfireSlackApp')
+  angular.module('productNotesApp')
   	.factory('Auth', function($firebaseAuth, FirebaseUrl){
   		var ref = new Firebase(FirebaseUrl);
   		var auth = $firebaseAuth(ref);

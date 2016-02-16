@@ -1,6 +1,6 @@
-# angularfire-slack
+# product-notes
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
+This project is generated with [yo angular generator](https://github.com/amitpaperg/product-notes)
 version 0.11.1.
 
 ## Build & development

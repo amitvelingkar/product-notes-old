@@ -3,14 +3,14 @@
 
   /**
    * @ngdoc overview
-   * @name angularfireSlackApp
+   * @name productNotesApp
    * @description
-   * # angularfireSlackApp
+   * # productNotesApp
    *
    * Main module of the application.
    */
   angular
-    .module('angularfireSlackApp', [
+    .module('productNotesApp', [
       'firebase',
       'angular-md5',
       'ui.router'
