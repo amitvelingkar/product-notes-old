@@ -78,6 +78,42 @@
             }
           }
         })
+        .state('features', {
+          url: '/features',
+          controller: 'FeaturesController',
+          controllerAs: 'vm',
+          templateUrl: 'features/index.html',
+          resolve: {
+            features: function($state, Auth, Features) {
+              return Auth.$requireAuth().then(function(auth){
+                // TODO - check for admin priviledge
+                return Features.$loaded();
+              }, function (error) {
+                $state.go('home');
+              });
+            }
+          }
+        })
+        .state('features.create', {
+          url: '/features',
+          controller: 'FeaturesController',
+          controllerAs: 'vm',
+          templateUrl: 'Features/create.html'
+        })
+        .state('features.labels', {
+          url: '/{featureId}/labels',
+          controller: 'LabelsController',
+          controllerAs: 'vmLabels',
+          templateUrl: 'features/labels.html',
+          resolve: {
+            labels: function($stateParams, Labels) {
+              return Labels.forFeature($stateParams.featureId).$loaded();
+            },
+            featureName: function($stateParams, features) {
+              return '#'+features.$getRecord($stateParams.featureId).name;
+            }
+          }
+        })
         .state('channels', {
           url: '/channels',
           controller: 'ChannelsController',
@@ -141,5 +177,5 @@
 
       $urlRouterProvider.otherwise('/');
     })
-    .constant('FirebaseUrl', 'https://fireslack-amit.firebaseio.com/');
+    .constant('FirebaseUrl', 'https://productnotes.firebaseio.com/');
 })();

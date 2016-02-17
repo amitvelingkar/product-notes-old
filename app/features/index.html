@@ -1,0 +1,22 @@
+<div class="main">
+	<div class="sidebar">
+		<div class="slack-name">
+			<h2>Product Notes</h2>
+		</div>
+
+		<div class="channel-list">
+			<div class="list-head">Features</div>
+			<div class="channel" ng-repeat="feature in vm.features">
+				<a ui-sref="features.labels({featureId: feature.$id})" ui-sref-active="selected"># {{ feature.name }}</a>
+			</div>
+			<div class="channel create">
+				<a ui-sref="features.create">
+					+ create feature
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="message-pane">
+		<ui-view></ui-view>
+	</div>
+</div>

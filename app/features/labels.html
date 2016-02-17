@@ -1,0 +1,20 @@
+<div class="header">
+	<h1>{{ vmLabels.featureName }}</h1>
+</div>
+
+<div class="message-wrap" ng-repeat="label in vmLabels.labels">
+	<div class="message-info">
+		<div class="message">
+		{{ label.name }}
+		</div>
+	</div>
+</div>
+
+<form class="message-form" ng-submit="vmLabels.createLabel()">
+<div class="input-group">
+	<input type="text" class="form-control" ng-model="vmLabels.newLabel.name" placeholder="Add a Label">
+	<span class="input-group-btn">
+		<button class="btn btn-default" type="submit">Add</button>
+	</span>
+</div>
+</form>
